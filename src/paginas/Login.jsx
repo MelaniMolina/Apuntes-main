@@ -10,7 +10,7 @@ const Login = () => {
     const { setAuth, setEstado } = useContext(AuthContext);
     const [mensaje, setMensaje] = useState({});
 
-    /* Para la validación de errores */
+    
     const { handleSubmit, control, formState: { errors } } = useForm();
 
     const onSubmit = async (data) => {

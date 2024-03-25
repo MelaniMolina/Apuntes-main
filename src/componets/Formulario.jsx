@@ -45,19 +45,20 @@ export const Formulario = () => {
             }, 3000);
         }
     };
+    
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             {Object.keys(mensaje).length > 0 && <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>}
             <div>
                 <label
                     htmlFor='nombre:'
-                    className='text-gray-700 uppercase font-bold text-sm'>The pet's name: </label>
+                    className='text-gray-700 uppercase font-bold text-sm'>Vehicle Model: </label>
                 <Controller
                     name='nombre'
                     control={control}
                     defaultValue=''
                     rules={{
-                        required: 'Campo Obligatorio',
+                        required: 'Obligatory field',
                         pattern: {
                             value: /^[A-Za-z\s]+$/,
                             message: 'Only letters are accepted',
@@ -70,7 +71,7 @@ export const Formulario = () => {
                                 type="text"
                                 className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''
                                     }`}
-                                placeholder='The pets name'
+                                placeholder='Enter the name of the vehicle'
                                 maxLength={20}
                             />
                             {fieldState.error && (
@@ -84,13 +85,13 @@ export const Formulario = () => {
             <div>
                 <label
                     htmlFor='propietario:'
-                    className='text-gray-700 uppercase font-bold text-sm'>Owner name: </label>
+                    className='text-gray-700 uppercase font-bold text-sm'>Owner's Name </label>
                 <Controller
                     name='propietario'
                     control={control}
                     defaultValue=''
                     rules={{
-                        required: 'Campo Obligatorio',
+                        required: 'Obligatory field',
                         pattern: {
                             value: /^[A-Za-z\s]+$/,
                             message: 'Only letters are accepted',
@@ -122,7 +123,7 @@ export const Formulario = () => {
                     control={control}
                     defaultValue=''
                     rules={{
-                        required: 'Campo Obligatorio',
+                        required: 'Obligatory field',
                         pattern: {
                             value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
                             message: 'Invalid email',
@@ -149,13 +150,13 @@ export const Formulario = () => {
             <div>
                 <label
                     htmlFor='celular:'
-                    className='text-gray-700 uppercase font-bold text-sm'>Celular: </label>
+                    className='text-gray-700 uppercase font-bold text-sm'>Cell phone: </label>
                 <Controller
                     name='celular'
                     control={control}
                     defaultValue=''
                     rules={{
-                        required: 'Campo Obligatorio',
+                        required: 'Obligatory field',
                         pattern: {
                             value: /^[0-9]*$/,
                             message: 'Valid phone with 10 digits',
@@ -177,19 +178,20 @@ export const Formulario = () => {
                     )}
                 />
             </div>
+
             <div>
                 <label
-                    htmlFor='convencional:'
-                    className='text-gray-700 uppercase font-bold text-sm'>Conventional telephone: </label>
+                    htmlFor='precio:'
+                    className='text-gray-700 uppercase font-bold text-sm'>Vehicle price: </label>
                 <Controller
-                    name='convencional'
+                    name='precio'
                     control={control}
                     defaultValue=''
                     rules={{
-                        required: 'Campo Obligatorio',
+                        required: 'Obligatory field',
                         pattern: {
-                            value: /^[0-9]{15}$/,
-                            message: 'Valid phone with 15 digits',
+                            value: /^[0-9]{10}$/,
+                            message: 'Enter period instead of comma',
                         },
                         }}
                     render={({ field, fieldState }) => (
@@ -199,7 +201,7 @@ export const Formulario = () => {
                                 type="number"
                                 className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''
                                     }`}
-                                placeholder='Enter the conventional number'
+                                placeholder='Enter the price of the vehicle'
                             />
                             {fieldState.error && (
                                 <p className="text-red-500 text-sm">{fieldState.error.message}</p>
@@ -208,16 +210,17 @@ export const Formulario = () => {
                     )}
                 />
             </div>
+
             <div>
                 <label
-                    htmlFor='Salida:'
-                    className='text-gray-700 uppercase font-bold text-sm'>Departure date: </label>
+                    htmlFor='Anio:'
+                    className='text-gray-700 uppercase font-bold text-sm'>Year of production of the vehicle: </label>
                 <Controller
                     name='salida'
                     control={control}
                     defaultValue=''
                     rules={{
-                        required: 'Campo Obligatorio',
+                        required: 'Obligatory field',
                     }}
                     render={({ field, fieldState }) => (
                         <div>
@@ -226,7 +229,7 @@ export const Formulario = () => {
                                 type="date"
                                 className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''
                                     }`}
-                                placeholder='Enter the departure date'
+                                placeholder='Enter the year of the vehicle'
                             />
                             {fieldState.error && (
                                 <p className="text-red-500 text-sm">{fieldState.error.message}</p>
@@ -238,14 +241,14 @@ export const Formulario = () => {
             
             <div>
                 <label
-                    htmlFor='sintomas:'
-                    className='text-gray-700 uppercase font-bold text-sm'>Symptoms:</label>
+                    htmlFor='matricula:'
+                    className='text-gray-700 uppercase font-bold text-sm'>Vehicle registration number:</label>
                 <Controller
-                    name='sintomas'
+                    name='matricula'
                     control={control}
                     defaultValue=''
                     rules={{
-                        required: 'Campo Obligatorio'
+                        required: 'Obligatory field'
                     }}
                     render={({ field, fieldState }) => (
                         <div>
@@ -253,7 +256,7 @@ export const Formulario = () => {
                                 {...field}
                                 className={`border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5 ${fieldState.invalid ? 'border-red-500' : ''
                                     }`}
-                                placeholder='Enter pets symptoms'
+                                placeholder='Enter the vehicle registration number'
                                 maxLength={200}
                             />
                             {fieldState.error && (
@@ -266,7 +269,7 @@ export const Formulario = () => {
 
             <div>
                 <label htmlFor="image" className="text-gray-700 uppercase font-bold text-sm">
-                Patient photo:
+                Car photo:
                 </label>
                 <div className="mb-5 form-floating">
                     <input

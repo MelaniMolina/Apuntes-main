@@ -53,7 +53,7 @@ const FormularioPerfil = () => {
                     control={control}
                     defaultValue=""
                     rules={{
-                        required: 'Campo Obligatorio',
+                        required: 'Obligatory field',
                         pattern: {
                             value: /^[A-Za-z\s]+$/,
                             message: 'Only letters are accepted',
@@ -88,7 +88,7 @@ const FormularioPerfil = () => {
                     control={control}
                     defaultValue=""
                     rules={{
-                        required: "Campo Obligatorio",
+                        required: "Obligatory field",
                         pattern: {
                             value: /^[A-Za-z\s]+$/,
                             message: 'Only letters are accepted',
@@ -125,7 +125,7 @@ const FormularioPerfil = () => {
                     control={control}
                     defaultValue=""
                     rules={{
-                        required: "Campo Obligatorio"
+                        required: "Obligatory field"
                     }}
                     render={({ field }) => (
                         <div className="mb-3">
@@ -161,7 +161,7 @@ const FormularioPerfil = () => {
                     control={control}
                     defaultValue=""
                     rules={{
-                        required: "Campo Obligatorio",
+                        required: "Obligatory field",
                         pattern: {
                             value: /^[0-9]{10}$/,
                             message: 'Valid phone with 10 digits',
